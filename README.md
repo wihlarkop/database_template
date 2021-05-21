@@ -1,4 +1,4 @@
-# Docker Compose Script For Database Config
+# Collection Docker Compose For Database
 
 ## How To Use
 
