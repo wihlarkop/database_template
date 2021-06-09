@@ -3,12 +3,13 @@ version: '3.9'
 services:
   mongo:
     image: mongo
-    restart: always
+    restart: unless-stopped
     ports:
       - ${MONGODB_HOST_PORT}:${MONGODB_CONTAINER_PORT}
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: ${MONGODB_USERNAME}
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASSWORD}
-      MONGO_INITDB_DATABASE: ${MONGODB_DATABASE}
     volumes:
       - ./mongod.conf:/etc/mongod.conf
+    environment:
+      MONGO_INITDB_DATABASE: ${MONGODB_DATABASE}
+      MONGO_INITDB_ROOT_USERNAME: ${MONGODB_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASSWORD}
+
