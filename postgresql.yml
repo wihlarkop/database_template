@@ -3,7 +3,7 @@ version: "3.9"
 services:
   pg:
     image: postgres
-    restart: unless-stopped
+    restart: always
     ports:
       - ${POSTGRES_HOST_PORT}:${POSTGRES_CONTAINER_PORT}
     volumes:
