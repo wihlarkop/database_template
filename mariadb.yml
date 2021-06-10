@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  mysql:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD : ${MARIADB_ROOT_PASSWORD}
+      MARIADB_DATABASE : ${MARIADB_DATABASE}
+      MARIADB_USER : ${MARIADB_USER}
+      MARIADB_PASSWORD : ${MARIADB_PASSWORD}
+    ports:
+      - ${MARIADB_HOST_PORT}:${MARIADB_CONTAINER_PORT}
+    volumes:
+      - ./var/lib/maridb:/var/lib/mariadb
