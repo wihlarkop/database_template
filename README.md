@@ -1,9 +1,10 @@
 # Collection Docker Compose For Database
 
+
+## Required
+
+- Docker
+
 ## How To Use
 
-i assume you have install docker and docker-compose
-
-then run
-
-docker-compose up
+docker-compose -f <file_name>.yml up
